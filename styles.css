@@ -1,7 +1,11 @@
 body {
     font-family: Arial, sans-serif;
     box-sizing: border-box;
-    background-color: rgb(190, 231, 231);
+    height:800px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    /* background-color: rgb(190, 231, 231); */
+    background-image: url('pic1.jpeg');
   }
   
   #container {

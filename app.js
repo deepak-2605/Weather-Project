@@ -67,6 +67,16 @@ function wet_lat_lon(lat, lon) {
 
 
 function print_details(data){
+  var cityName=data.name;
+  fetch(`https://api.unsplash.com/search/photos/?query=${cityName}&&orientation=landscape&client_id=kdNwYs_92jQnTGqAGr4n3Y8QyPs9TLKVnncRGhQ4JzQ`)
+    .then(response => response.json())
+    .then(data2 => {
+      console.log(data2);
+      var imageurl=data2.results[1].urls.raw;
+      console.log(imageurl);
+      document.getElementById("body").style.backgroundImage=`url(${imageurl})`;
+    })
+
   document.getElementById("location").innerHTML= `<h3>${data.name}</h3>`
   ;
   var pressure1 = Math.round((data.main.pressure / 760) * 100);
@@ -95,5 +105,62 @@ function print_details(data){
       document.getElementById("parameter8").innerHTML = `
         <h3>Description: ${data.weather[0].description}</h3>
       `;
+    dayornight(data.coord.lat,data.coord.lon,data.weather.description);
 }
 
+
+function dayornight(latitude3,longitude3,description){
+  fetch(`https://api.ipgeolocation.io/timezone?apiKey=2858271f7cd44167bbd495a9190617da&lat=${latitude3}&long=${longitude3}`)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      var time=data.time_24[0]+data.time_24[1];
+      if(time>=6 && time<18){
+        if(description=="clear sky"){
+          
+          // 1
+        }else if(description=="few clouds"){
+          // 2
+        }else if(description=="scattered clouds"){
+          // 3
+        }else if(description=="broken clouds"){
+          // 4
+        }else if(description=="shower rain"){
+          // 9
+        }else if(description=="rain"){
+          // 10
+        }else if(description=="thunderstorm"){
+          // 11
+        }else if(description=="snow"){
+          // 13
+        }else if(description=="mist"){
+          document.getElementById("description_icon").innerHTML=`<img src="/images/01d@2x.png">`;
+          // 50
+        }
+      }else{
+        if(description=="clear sky"){
+          // 1
+        }else if(description=="few clouds"){
+          // 2
+        }else if(description=="scattered clouds"){
+          // 3
+        }else if(description=="broken clouds"){
+          // 4
+        }else if(description=="shower rain"){
+          // 9
+        }else if(description=="rain"){
+          // 10
+        }else if(description=="thunderstorm"){
+          // 11
+        }else if(description=="snow"){
+          // 13
+        }else if(description=="mist"){
+          document.getElementById("description_icon").innerHTML=`<img src="/images/01d@2x.png">`;
+          // 50
+        }
+      }
+    })
+
+
+
+}
