@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <nav>
+      <ul class ="logo"><img src="./sunny-rainy-cloudy-weather-icons-vector-45380411.webp" alt="Logo"></ul>
+      <ul class ="header"> <h1> Brown Munde Weather </h1></ul>
+      <ul class ="tools">Home</ul>
+      <ul class ="tools">About Us</ul>
+      <ul class ="tools">Contact Us</ul>
+      <ul class ="tools">Learn More</ul>
+    </nav>
+    <div id="container">
+      <form id="searchBox">
+        <label for="city"></label>
+        <input type="text" id="city" name="city" placeholder="Enter Location">
+        <button type="submit" id="submitBtn"><i class="fa-solid fa-magnifying-glass-location"></i></button>
+      </form>
+      <div id="location">
+
+      </div>
+      <div id="weather">
+           <div id="output">
+                <div id="parameter1" class="item">Temperature</div>
+                <div id="parameter2" class="item">Pressure</div>
+                <div id="parameter3" class="item">Feels Like</div>
+                <div id="parameter4" class="item">Humidity</div>
+                <div id="parameter5" class="item">Visibility</div>
+                <div id="parameter6" class="item">Sunrise</div>
+                <div id="parameter7" class="item">Sunset</div>
+                <div id="parameter8" class="item">Weather Desription</div>
+
+           </div>
+      </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
