@@ -185,9 +185,7 @@ function print_details(data) {
         <h3>Pressure: ${pressure1}atm</h3>
         <h3>Wind Speed: ${data.wind.speed}Km/h</h3>
         <h3>Wind Degree: ${data.wind.deg}°</h3>
-      `;
-    
-     
+      `;  
     
 }
 
